@@ -52,18 +52,19 @@ public class ModelService {
         .build();
 
     final Manufacturer manufacturer =
-        manufacturerRepository.findOne(Example.of(Manufacturer.builder().name(modelDto.getManufacturerName()).build())).get();
+        manufacturerRepository.findByName(modelDto.getManufacturerName());
 
     final List<Model> models = Stream.concat(manufacturer.getModels().stream(), Arrays.asList(model).stream())
         .collect(Collectors.toList());
 
-    manufacturer.setModels(models);
+    manufacturer.getModels().clear();
+    manufacturer.getModels().addAll(models);
   }
 
   private Set<Features> createFeatures(final ModelDto modelDto) {
     return modelDto.getFeatureNameList()
         .stream()
-        .map(s -> featuresRepository.findOne(Example.of(Features.builder().name(s).build())).get())
+        .map(s -> featuresRepository.findByName(s))
         .collect(Collectors.toSet());
   }
 
