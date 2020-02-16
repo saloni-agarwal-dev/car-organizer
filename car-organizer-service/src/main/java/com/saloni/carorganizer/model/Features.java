@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,9 +30,8 @@ public class Features {
   private String name;
 
   @Column
-  private int cost;
+  private BigDecimal cost;
 
   @ManyToMany(mappedBy = "features")
   private Set<Model> models = new HashSet<>();
-
 }
