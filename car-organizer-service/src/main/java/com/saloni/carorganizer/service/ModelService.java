@@ -61,6 +61,20 @@ public class ModelService {
     manufacturer.getModels().addAll(models);
   }
 
+  public void updateModel(final ModelDto modelDto, final long id){
+    final Model model = modelRepository.findById(id).get();
+    model.setBaseCost(modelDto.getBaseCost());
+    model.setName(modelDto.getModelName());
+    model.getFeatures().clear();
+    model.setFeatures(createFeatures(modelDto));
+  }
+
+  public void deleteModel(final long id){
+    final Model model = modelRepository.findById(id).get();
+    model.getFeatures().clear();
+    modelRepository.deleteById(id);
+  }
+
   private Set<Features> createFeatures(final ModelDto modelDto) {
     return modelDto.getFeatureNameList()
         .stream()
