@@ -30,6 +30,14 @@ be authenticated.
 
 So all the endpoints are secured.
 
+#rest end point documentation
+
+i have used swagger which gives all the endpoints documentation
+
+go to below link to see all the endpoints documentation
+
+http://localhost:8080/swagger-ui.html
+
 # manual testing
 when the service is run the data.sql in main/resources folder will insert the data into the table.
 
