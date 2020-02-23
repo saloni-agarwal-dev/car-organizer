@@ -12,6 +12,11 @@ Below technologies or concepts are used
 6. H2 database
 7. Spring security
 
+#pre requisite software
+
+1. mvn
+2. java 8
+
 # Deployment
 run the below commands in the car-organizer-service folder
 
@@ -44,6 +49,15 @@ will give the overview of all the models and features available for BMW( id 1)
 I have written few tests cases for service ans controller class but not for all.
 Did not cover 100 percent code coverage but written few test cases to give the idea.
 Normally in production application i always try to cover 100 percent code coverage.
+
+
+#database
+
+H2 inmemory database is used.
+Once the application is run we can go to the 
+http://localhost:8080/h2-console/
+
+we can see the tables and data.
 
 
 
