@@ -18,10 +18,10 @@ Below technologies or concepts are used
 2. java 8
 
 # Deployment
-run the below commands in the car-organizer-service folder
+run the below commands in the car-organizer-service folder.
 
-mvn install (This will build the entire project and run the unit tests)
-mvn spring-boot:run (This will run the service at localhost:8080)
+mvn install (This will build the entire project and run the unit tests).
+mvn spring-boot:run (This will run the service at localhost:8080).
 
 # security (bonus)
 
