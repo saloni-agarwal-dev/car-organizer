@@ -1,14 +1,11 @@
 package com.saloni.carorganizer.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -19,7 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
@@ -45,9 +41,9 @@ public class Model {
 
   @ManyToMany(cascade = {CascadeType.ALL})
   @JoinTable(
-              name="Model_Features",
-              joinColumns = {@JoinColumn(name = "model_id")},
-              inverseJoinColumns = {@JoinColumn(name = "feature_id")}
-            )
+      name = "Model_Features",
+      joinColumns = {@JoinColumn(name = "model_id")},
+      inverseJoinColumns = {@JoinColumn(name = "feature_id")}
+  )
   private Set<Features> features = new HashSet<>();
 }
